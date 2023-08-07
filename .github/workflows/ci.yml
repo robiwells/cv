@@ -1,0 +1,16 @@
+name: CI
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup | Checkout
+        uses: actions/checkout@v3
+
+      - name: Build | Cirriculum Vitae
+        uses: xu-cheng/latex-action@v2
+        with:
+          latexmk_shell_escape: true
+          latexmk_use_xelatex: true
+          root_file: ./cv.tex

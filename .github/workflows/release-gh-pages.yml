@@ -1,0 +1,47 @@
+name: Release on GitHub Pages
+on:
+  push:
+    branches: [main]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup | Checkout
+        uses: actions/checkout@v3
+
+      - name: Build | Cirriculum Vitae
+        uses: xu-cheng/latex-action@v2
+        with:
+          latexmk_shell_escape: true
+          latexmk_use_xelatex: true
+          root_file: ./cv.tex
+
+      - name: Stage | PDFs
+        run: |
+          mkdir pub/
+          mv cv.pdf pub/
+
+      - name: Setup | Python 3.9
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+
+      - name: Setup | j2cli
+        run: |
+          pip3 install --user --upgrade j2cli
+          j2 --version
+
+      - name: Stage | CV
+        run: |
+          PDF='cv.pdf' j2 templates/index.html.j2 > pub/cv.html
+
+      - name: Stage | CV, Embed
+        run: |
+          PDF='cv.pdf' j2 templates/embed.html.j2 > pub/cv-embed.html
+
+      - name: Deploy, Github Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: pub/
