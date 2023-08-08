@@ -12,11 +12,11 @@ Deployment is automated by [GitHub Actions](https://github.com/robiwells/cv/acti
 
 - Pushes to `main` trigger a new release of the [latest cv](https://github.com/robiwells/cv/releases/tag/latest), available in several formats.
 
-  | Artifact               | Link                                                                          | Mirror                                         |
-  | ---------------------- | ----------------------------------------------------------------------------- | ---------------------------------------------- |
-  | CV                     | <https://robiwells.github.io/cv/cv.html>                                   |                                                |
-  | CV, Embedded           | <https://robiwells.github.io/cv/cv-embed.html>                             |                                                |
-  | CV, Download           | <https://github.com/robiwells/cv/releases/download/latest/cv.pdf>          |                                                |
+  | Artifact               | Link                                                                       |
+  | ---------------------- | ---------------------------------------------------------------------------|
+  | CV                     | <https://robiwells.github.io/cv/cv.html>                                   |
+  | CV, Embedded           | <https://robiwells.github.io/cv/cv-embed.html>                             |
+  | CV, Download           | <https://github.com/robiwells/cv/releases/download/latest/cv.pdf>          |
 
 - Manually pushed [releases](https://github.com/robiwells/cv/releases) also trigger workflows to upload artifacts.
 
