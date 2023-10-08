@@ -14,14 +14,26 @@
 \newcommand{\mySubHeading}[3]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
+      \textbf{\small#1} & #2 \\
       \textit{\small#3} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\mySubHeadingOneRow}[3]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}c r}
+      \textbf{\small#1} & #2 & \textit{\small#3} \\
     \end{tabular*}\vspace{-7pt}
 }
 \newcommand{\mySubHeadingLess}[2]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2
+    \end{tabular*}\vspace{-7pt}\\
+}
+\newcommand{\mySubHeadingOnly}[1]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} 
     \end{tabular*}\vspace{-7pt}\\
 }
 \newcommand{\mySubSubHeading}[2]{
@@ -38,9 +50,9 @@
 }
 
 % Add itemized commands
-\newcommand{\myItem}[1]{\item\small{{#1 \vspace{-2pt}}}}
+\newcommand{\myItem}[1]{\item\footnotesize{{#1 \vspace{-2pt}}}}
 \newcommand{\mySubItem}[1]{\myItem{#1}\vspace{-4pt}}
-\newcommand{\mySubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\mySubHeadingListStart}{\begin{itemize}[leftmargin=0.05in, label={}]}
 \newcommand{\mySubHeadingListEnd}{\end{itemize}}
 \newcommand{\myItemListStart}{\begin{itemize}}
 \newcommand{\myItemListEnd}{\end{itemize}\vspace{1pt}}
@@ -62,7 +74,7 @@
 \newcommand{\closing}{
     \vspace{0.3cm}
     \textit{Sincerely,\\}
-    {Spencer C. Imbleau\\}
+    {Robert Wells\\}
     \vspace{0.1cm}
     \includegraphics[height=2in, width=2in, keepaspectratio]{signature}
 }
