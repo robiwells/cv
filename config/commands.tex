@@ -11,6 +11,13 @@
 }
 
 % Add heading commands
+\newcommand{\mySubHeadingWithSkills}[4]{
+  \vspace{0pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\small#1} & #2 \\
+      \textit{\footnotesize#3} & \textit{\footnotesize#4} \\
+    \end{tabular*}\vspace{-3pt}
+}
 \newcommand{\mySubHeading}[3]{
   \vspace{0pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
